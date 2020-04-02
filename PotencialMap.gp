@@ -94,7 +94,7 @@ set xrange [p-d:p+d]
 set yrange [0.866-d:0.866+d]
 
 set contour base
-set cntrparam levels incremental -1.495,0.000001,-1.48
+set cntrparam levels incremental -1.6,0.000001,-1.3
 splot f(x,y) t 'V'
 
 unset multiplot

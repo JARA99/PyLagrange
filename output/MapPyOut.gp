@@ -14,7 +14,7 @@ set xtics rotate
 set xlabel 'Desplazamiento en x' rotate by 0
 set ylabel 'Desplazamiento en y' rotate by 90
 
-load '../gnbu.pal'
+load '../ylgn.pal'
 set palette negative
 
 set size ratio -1
@@ -29,7 +29,7 @@ unset surface
 
 ###################################Variables#########################################
 M1=1
-M2=1
+M2=2
 xA=1
 xB=1
 xC=1

@@ -120,8 +120,18 @@ Mapoutput.writelines(MapstrList)
 Mapinput.close()
 Mapoutput.close()
 
+x1=float(M2)/(float(M2)+float(M1))
+x2=x1-1
+p=str((x1+x2)/2)
+
+Data=open("output/Puntos.dat","w")
+Data.writelines([xA+',0\n',xB+',0\n',xC+',0\n','-'+p+',0.866\n',p+',0.866\n'])
+Data.close()
+
+print('Los putos de Lagrange están aproximadamente en:')
+print(xA+',0\n'+xB+',0\n'+xC+',0\n'+'-'+p+',0.866\n'+p+',0.866\n')
 
 process1 = subprocess.Popen("cd output/ \n gnuplot 2DPyOut.gp 3DPyOut.gp MapPyOut.gp", shell = True)
 os.waitpid(process1.pid, 0)
-process2 = subprocess.Popen("cd output/ \n gthumb 2D.png", shell= True)
+process2 = subprocess.Popen("cd output/ \n eog Map.png", shell= True)
 os.waitpid(process2.pid, 0)

@@ -31,12 +31,12 @@ unset surface
 ####################        Datos que puedes cambiar        #########################
 ###################################Variables#########################################
 ###Masas:
-M1=1
-M2=0.99999999999999999999
+M1=22.7E24
+M2=22.5E24
 ###Distancias en x de los primeros 3 puntos
-xA=-1.2
+xA=-1.20685
 xB=0
-xC=1.2
+xC=1.20685
 
 ###Detalle en curvas de nivel para los puntos P1, P2, P3 y P4
 dP1=100#%

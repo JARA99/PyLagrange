@@ -27,14 +27,32 @@ set view map
 unset key
 unset surface
 
+
+####################        Datos que puedes cambiar        #########################
 ###################################Variables#########################################
+###Masas:
 inputM1
 inputM2
+###Distancias en x de los primeros 3 puntos
 inputxA
 inputxB
 inputxC
 
-d=0.07
+###Detalle en curvas de nivel para los puntos P1, P2, P3 y P4
+dP1=100#%
+dP2=100#%
+dP3=100#%
+dP4=100#%
+
+###Ampliacion en los puntos P1, P2, P3 y P4
+aP1=100#%
+aP2=100#%
+aP3=100#%
+aP4=100#%
+
+
+#####################################################################################
+#################################     Fin     #######################################
 
 x1=M2/(M2+M1)
 x2=x1-1
@@ -51,15 +69,18 @@ f(x,y)=x2/sqrt((x-x1)**2+y**2)-x1/sqrt((x-x2)**2+y**2)-0.5*(x**2+y**2)
 
 set title 'P1'
 
-d=0.07
+d=7.0000000000/aP1
+ls=0.1000000000/dP1
 
 set xrange [xA-d:xA+d]
 set yrange [-d:d]
 
-li=x2/sqrt((xA-x1)**2+0**2)-x1/sqrt((xA-x2)**2+0**2)-0.5*(xA**2+0**2)
+pli=f(xA,0)
+mli=f(xA-d,0)
+li=2*abs(pli-mli)
 
 set contour base
-set cntrparam levels incremental li-0.5,0.0005,li+0.5
+set cntrparam levels incremental mli-li,ls,pli+li
 
 
 
@@ -69,15 +90,18 @@ splot f(x,y) t 'V'
 
 set title 'P2'
 
-d=0.07
+d=7.0000000000/aP2
+ls=0.9000000000/dP2
 
 set xrange [xB-d:xB+d]
 set yrange [-d:d]
 
-li=x2/sqrt((xB-x1)**2+0**2)-x1/sqrt((xB-x2)**2+0**2)-0.5*(xB**2+0**2)
+pli=f(xB,0)
+mli=f(xB-d,0)
+li=2*abs(pli-mli)
 
 set contour base
-set cntrparam levels incremental li-0.5,0.009,li+0.5
+set cntrparam levels incremental mli-li,ls,pli+li
 
 splot f(x,y) t 'V'
 
@@ -85,30 +109,36 @@ splot f(x,y) t 'V'
 
 set title 'P3'
 
-d=0.07
+d=7.0000000000/aP3
+ls=0.0900000000/dP3
 
 set xrange [xC-d:xC+d]
 set yrange [-d:d]
 
-li=x2/sqrt((xC-x1)**2+0**2)-x1/sqrt((xC-x2)**2+0**2)-0.5*(xC**2+0**2)
+pli=f(xC,0)
+mli=f(xC-d,0)
+li=2*abs(pli-mli)
 
 set contour base
-set cntrparam levels incremental li-0.5,0.0009,li+0.5
+set cntrparam levels incremental mli-li,ls,pli+li
 splot f(x,y) t 'V'
 
 ######################################P4 y P5#############################################
 
 set title 'P4 y P5'
 
-d=0.004
+d=0.4000000000/aP4
+ls=0.0001800000/dP4
 
 set xrange [p-d:p+d]
 set yrange [0.866-d:0.866+d]
 
-li=x2/sqrt((p-x1)**2+0.866**2)-x1/sqrt((p-x2)**2+0.866**2)-0.5*(p**2+0.866**2)
+pli=f(p,0.866)
+mli=f(p-d,0.866)
+li=2*abs(pli-mli)
 
 set contour base
-set cntrparam levels incremental li-0.001,0.0000018,li+0.001
+set cntrparam levels incremental mli-li,ls,pli+li
 splot f(x,y) t 'V'
 
 unset multiplot

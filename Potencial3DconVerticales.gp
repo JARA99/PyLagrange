@@ -8,7 +8,6 @@ set xtics rotate
 set xlabel 'Desplazamiento en x' rotate by 0
 set ylabel 'Desplazamiento en y' rotate by 90
 
-set loadpath '~/.config/Gnuplot/'
 Cpalette
 set palette negative
 

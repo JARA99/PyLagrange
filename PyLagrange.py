@@ -86,7 +86,7 @@ for i in range(len(DstrList)):
     if kwC == DstrList[i]:
         DstrList[i]=str('xC='+xC+'\n')
     if kwColor == DstrList[i]:
-        DstrList[i]=str('load \'./gnuplot-palettes/'+chcolor+'.pal\''+'\n')
+        DstrList[i]=str('load \'../'+chcolor+'.pal\''+'\n')
 
 ##crear el documento nuevo y cerrar ambos
 Doutput.writelines(DstrList)
@@ -113,7 +113,7 @@ for i in range(len(MapstrList)):
     if kwC == MapstrList[i]:
         MapstrList[i]=str('xC='+xC+'\n')
     if kwColor == MapstrList[i]:
-        MapstrList[i]=str('load \'./gnuplot-palettes/'+chcolor+'.pal\''+'\n')
+        MapstrList[i]=str('load \'../'+chcolor+'.pal\''+'\n')
 
 ##crear el documento nuevo y cerrar ambos
 Mapoutput.writelines(MapstrList)

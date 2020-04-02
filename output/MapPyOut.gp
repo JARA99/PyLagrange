@@ -14,8 +14,7 @@ set xtics rotate
 set xlabel 'Desplazamiento en x' rotate by 0
 set ylabel 'Desplazamiento en y' rotate by 90
 
-set loadpath '~/.config/Gnuplot/'
-load './gnuplot-palettes/ylgn.pal'
+load '../gnbu.pal'
 set palette negative
 
 set size ratio -1

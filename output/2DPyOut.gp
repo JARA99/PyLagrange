@@ -21,6 +21,6 @@ set grid
 
 f(x)=x2/sqrt((x-x1)**2+y**2)-x1/sqrt((x-x2)**2+y**2)-0.5*(x**2+y**2)
 
-plot f(x) t 'V' ls 4
+plot f(x) t 'V' ls 3
 
 ##

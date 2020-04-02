@@ -8,8 +8,7 @@ set xtics rotate
 set xlabel 'Desplazamiento en x' rotate by 0
 set ylabel 'Desplazamiento en y' rotate by 90
 
-set loadpath '~/.config/Gnuplot/'
-load './gnuplot-palettes/bupu.pal'
+load '../ylgn.pal'
 set palette negative
 
 set style fill transparent solid 0.9
@@ -23,11 +22,11 @@ unset key
 unset surface
 
 ###################################Variables#########################################
-M1=25.786E24
-M2=24.789E24
-xA=-1.17191
-xB=-0.025856
-xC=1.14116
+M1=1
+M2=1.0000000000000000000000000001
+xA=-1
+xB=0
+xC=1
 
 x1=M2/(M2+M1)
 x2=x1-1
@@ -44,10 +43,10 @@ set contour base
 set cntrparam levels incremental -5,0.15,0
 
 
-set arrow from xA,0,-1.5 to xA,0,-17.5 nohead dt 3 front
-set arrow from xB,0,-1.5 to xB,0,-17.5 nohead dt 3 front
-set arrow from xC,0,-1.5 to xC,0,-17.5 nohead dt 3 front
-set arrow from p,0.866,-1.5 to p,0.866,-17.5 nohead dt 3 front
-set arrow from p,-0.866,-1.5 to p,-0.866,-17.5 nohead dt 3 front
+set arrow from xA,0,-1.1 to xA,0,-36 nohead dt 3 front
+set arrow from xB,0,-1.1 to xB,0,-36 nohead dt 3 front
+set arrow from xC,0,-1.1 to xC,0,-36 nohead dt 3 front
+set arrow from p,0.866,-1.1 to p,0.866,-36 nohead dt 3 front
+set arrow from p,-0.866,-1.1 to p,-0.866,-36 nohead dt 3 front
 
 splot f(x,y) t 'V'

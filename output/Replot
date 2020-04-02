@@ -1,0 +1,3 @@
+#!/bin/bash
+gnuplot 2DPyOut.gp 3DPyOut.gp MapPyOut.gp
+eog Map.png

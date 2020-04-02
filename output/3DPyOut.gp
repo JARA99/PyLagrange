@@ -8,7 +8,7 @@ set xtics rotate
 set xlabel 'Desplazamiento en x' rotate by 0
 set ylabel 'Desplazamiento en y' rotate by 90
 
-load '../ylgn.pal'
+load '../gnbu.pal'
 set palette negative
 
 set style fill transparent solid 0.9
@@ -22,11 +22,11 @@ unset key
 unset surface
 
 ###################################Variables#########################################
-M1=1
-M2=2
-xA=1
-xB=1
-xC=1
+M1=1.989E30
+M2=1.898E27
+xA=-1.06709
+xB=-0.934312
+xC=0.987421
 
 x1=M2/(M2+M1)
 x2=x1-1
@@ -43,10 +43,10 @@ set contour base
 set cntrparam levels incremental -5,0.15,0
 
 
-set arrow from xA,0,-1.1 to xA,0,-36 nohead dt 3 front
-set arrow from xB,0,-1.1 to xB,0,-36 nohead dt 3 front
-set arrow from xC,0,-1.1 to xC,0,-36 nohead dt 3 front
-set arrow from p,0.866,-1.1 to p,0.866,-36 nohead dt 3 front
-set arrow from p,-0.866,-1.1 to p,-0.866,-36 nohead dt 3 front
+set arrow from xA,0,-1.1 to xA,0,-28 nohead dt 3 front
+set arrow from xB,0,-1.1 to xB,0,-28 nohead dt 3 front
+set arrow from xC,0,-1.1 to xC,0,-28 nohead dt 3 front
+set arrow from p,0.866,-1.1 to p,0.866,-28 nohead dt 3 front
+set arrow from p,-0.866,-1.1 to p,-0.866,-28 nohead dt 3 front
 
 splot f(x,y) t 'V'

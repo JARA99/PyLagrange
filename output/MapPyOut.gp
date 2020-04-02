@@ -14,7 +14,7 @@ set xtics rotate
 set xlabel 'Desplazamiento en x' rotate by 0
 set ylabel 'Desplazamiento en y' rotate by 90
 
-load '../ylgn.pal'
+load '../gnbu.pal'
 set palette negative
 
 set size ratio -1
@@ -28,13 +28,11 @@ unset key
 unset surface
 
 ###################################Variables#########################################
-M1=1
-M2=2
-xA=1
-xB=1
-xC=1
-
-d=0.07
+M1=1.989E30
+M2=1.898E27
+xA=-1.06709
+xB=-0.934312
+xC=0.987421
 
 x1=M2/(M2+M1)
 x2=x1-1
@@ -51,6 +49,8 @@ f(x,y)=x2/sqrt((x-x1)**2+y**2)-x1/sqrt((x-x2)**2+y**2)-0.5*(x**2+y**2)
 
 set title 'P1'
 
+d=0.02
+
 set xrange [xA-d:xA+d]
 set yrange [-d:d]
 
@@ -65,11 +65,13 @@ splot f(x,y) t 'V'
 
 set title 'P2'
 
+d=0.05
+
 set xrange [xB-d:xB+d]
 set yrange [-d:d]
 
 set contour base
-set cntrparam levels incremental -3,0.005,0
+set cntrparam levels incremental -3,0.001,0
 
 splot f(x,y) t 'V'
 
@@ -94,7 +96,7 @@ set xrange [p-d:p+d]
 set yrange [0.866-d:0.866+d]
 
 set contour base
-set cntrparam levels incremental -1.495,0.000001,-1.48
+set cntrparam levels incremental -1.5,0.000001,-1.49
 splot f(x,y) t 'V'
 
 unset multiplot
